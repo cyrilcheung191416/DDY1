@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ui menu">
+        <div class="header item">
+          <a href="/" class="link">home</a>
+        </div>
+        <a class="item"> blog </a>
+        <a class="item"> contact </a>
+        <a class="item"> About </a>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="ui container">
+        <form action="/add" class="ui form" method="POST">
+          <div class="ui form">
+            <div class="three fields">
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input type="text" placeholder="First Name" name="first_name" />
+              </div>
+              <div class="field">
+                <label for="middle_name">Middle name</label>
+                <input
+                  type="text"
+                  placeholder="Middle Name"
+                  name="middle_name"
+                />
+              </div>
+              <div class="field">
+                <label for="last_name">Last name</label>
+                <input type="text" placeholder="Last Name" name="last_name" />
+              </div>
+            </div>
+          </div>
+
+          <div class="ui fluid field">
+            <input
+              type="submit"
+              value="Submit"
+              class="ui inverted green basic fluid button"
+            />
+          </div>
+        </form>
+        <br /><br />
+        <table class="ui single line table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Middle name</th>
+              <th>Last name</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% clubs.forEach((club)=>{ %>
+            <tr>
+              <td><%- club.first_name %></td>
+              <td><%- club.middle_name %></td>
+              <td><%- club.last_name %></td>
+              <td>
+                <a class="ui purple button" href="/edit/<%= club._id %>"
+                  ><i class="edit outline icon"></i
+                ></a>
+              </td>
+              <td>
+                <a class="ui red button" href="/delete/<%= club._id %>"
+                  ><i class="minus icon"></i
+                ></a>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="/js/semantic.min.js"></script>
+  </body>
+</html>

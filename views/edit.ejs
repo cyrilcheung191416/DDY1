@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/semantic.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ui menu">
+        <div class="header item">
+          <a href="/" class="link">home</a>
+        </div>
+        <a class="item"> blog </a>
+        <a class="item"> contact </a>
+        <a class="item"> About </a>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="ui container">
+        <form action="/edit/<%- club._id %>" class="ui form" method="POST">
+          <div class="ui form">
+            <div class="three fields">
+              <div class="field">
+                <label for="first_name">First name</label>
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  value="<%- club.first_name %>"
+                  name="first_name"
+                />
+              </div>
+              <div class="field">
+                <label for="middle_name" name="middle_name">Middle name</label>
+                <input
+                  type="text"
+                  placeholder="Middle Name"
+                  value="<%- club.middle_name %>"
+                  name="middle_name"
+                />
+              </div>
+              <div class="field">
+                <label for="last_name">Last name</label>
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  value="<%- club.last_name %>"
+                  name="last_name"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="ui fluid field">
+            <input
+              type="submit"
+              value="Submit"
+              class="ui inverted green basic fluid button"
+            />
+          </div>
+        </form>
+        <br /><br />
+      </div>
+    </div>
+
+    <script src="/js/semantic.min.js"></script>
+  </body>
+</html>
